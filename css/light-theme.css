@@ -1,51 +1,236 @@
+/*
+  Geckoboard Custom CSS
+/* line 826, icons/*.png */
+.icons-sprite, .geckometer-widget .widget-canvas .scale, .geckometer-widget .widget-canvas .scale-big {
+  background: url(https://d2z2ohvv20qlx4.cloudfront.net/assets/icons-s1a210402ce-14decd220807271e608d99acb1cda4c7.png) no-repeat; }
+​
+/*
+  ## Dashboard styles
+  There isn't much to the dashboard, it's just a place for widgets. You can
+  change the background color and add a background image here though
+*/
+/* line 33, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
 body {
-    background: #f0f0f0; 
-    }
-
-
-.clock-widget .time { 
-    background-color:rgb(233, 233, 233); 
-    }
-
-
+  background: #f0f0f0; }
+​
+/*
+  ## Widget styles
+  The variables below dictate the colour of the widget elements
+*/
+/*
+  The anatomy of the widget in it's basic form is shown below, you can target
+  the individual widgets using the id which carries the unique id of each
+  widget shown here as `widget-{{id}}` where id is the numeric id of the widget
+  (`widget-12345` for example)
+​
+      <article class="widget" id="widget-{{id}}">
+        <div class="widget-inner widget-size-1x1">
+          <section class="widget-body clock-widget no-title">
+            <div class="widget-canvas"></div>
+          </section>
+          <footer></footer>
+        </div>
+      </article>
+​
+  You can set the widget colouring by altering the above variables, edit here
+  to adjust the widget structure
+*/
+/* line 85, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
 .widget {
-  -webkit-box-shadow: #f0f0f0 0 0 8px;
-  -moz-box-shadow: #f0f0f0 0 0 8px;
-  box-shadow: #f0f0f0 0 0 8px; }
+  background-color: #f0f0f0; }
+  /* line 91, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
   .widget .widget-inner {
     border: solid 1px #e5e5e5;
     background-color: white; }
-    .widget .widget-inner > header {
-      background-color: whitesmoke; }
-      .widget .widget-inner > header h1 {
-        color: #8b8b8b;
-        text-shadow: 1px 1px white; }
-    .widget .widget-inner > footer {
-      color: #555555;
-      background-color: whitesmoke;
-      text-shadow: 1px 1px white; }
+    /* line 96, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+    .widget .widget-inner > header h1 {
+      color: #8b8b8b;
+      margin-bottom: 0; }
+  /* line 103, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .widget .widget-footer footer {
+    color: #8b8b8b;
+    background-color: whitesmoke;
+    text-shadow: 1px 1px white; }
+    /* line 108, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+    .widget .widget-footer footer.open .settings, .widget .widget-footer footer .settings:hover {
+      color: #666666; }
+  /* line 114, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
   .widget .widget-body {
     color: #666666;
     text-shadow: 1px 1px white; }
+    /* line 119, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
     .widget .widget-body .t-secondary {
-      color: #969696; }
+      color: #828282; }
+    /* line 123, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+    .widget .widget-body .custom-error-message {
+      color: #828282; }
+  /* line 128, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .widget .status-indicator {
+    color: #8b8b8b !important; }
+  /* line 133, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
   .widget .widget-actions a:hover {
     background-color: gainsboro; }
-
-
-.map-widget path {
-    fill: #e0e0e0;
-    stroke: #d5d5d5; 
-    }
-
-.map-widget circle {
-    fill: #b940ff; 
-    }
-  
+​
+/* line 139, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.ie9 .loading .status-indicator::before {
+  background-image: url(https://d2z2ohvv20qlx4.cloudfront.net/assets/loading-spinner-light-ie9-78012229d9b44cf841528207eea31d71.gif); }
+​
+/*
+  You can target widgets that belong to a paricular service using the service
+  HTML class that is assigned to each widget. The class names are the lower
+  case equivalent of the service title with all non alphanumeric characters,
+  including spaces, replaced with a hyphen. For example Google Analytics
+  widgets posess the `google-analytics` HTML class.
+​
+  If you wish to alter the styling for a particluar template's visualisation
+  you may target the canvas area of that widget type using the template type
+  specific HTML class name. Selectors for each template type are stubbed out
+  below.
+*/
+/* line 159, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.geckometer {
+  fill: #666666; }
+  /* line 163, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .geckometer .gauge-needle-bg {
+    stroke: #fff; }
+  /* line 166, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .geckometer .gauge-needle-line, .geckometer .gauge-needle-oval {
+    stroke: #8b9092; }
+  /* line 170, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .geckometer .goal {
+    fill: #fff;
+    text-shadow: none; }
+​
+/* line 179, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .linechart-widget .widget-footer > footer {
+  background-color: rgba(245, 245, 245, 0.7); }
+​
+/* line 186, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .linechart.v2 .axis .tick line, .future-composition .linechart.v2 .axis .tick text {
+  fill: #8b8b8b; }
+/* line 190, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .linechart.v2 .grid-x .tick {
+  stroke: #fff; }
+/* line 193, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .linechart.v2 .grid-x-threshold .tick {
+  stroke: whitesmoke; }
+/* line 196, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .linechart.v2 .grid-y .tick {
+  stroke: #dfdfdf; }
+/* line 200, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .linechart.v2 .legend text {
+  fill: #8b8b8b; }
+/* line 204, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .linechart.v2 .tooltip-focus {
+  text-shadow: none; }
+  /* line 206, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .future-composition .linechart.v2 .tooltip-focus .tooltip-dot {
+    stroke: #fff; }
+  /* line 209, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .future-composition .linechart.v2 .tooltip-focus .tooltip-dashed-line {
+    stroke: #dfdfdf; }
+/* line 214, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .linechart.v2 .threshold {
+  fill: whitesmoke; }
+​
+/* line 223, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.number-widget .widget-canvas .goal-stats {
+  text-shadow: none; }
+  /* line 226, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .number-widget .widget-canvas .goal-stats .target-value {
+    color: #fff; }
+  /* line 230, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .number-widget .widget-canvas .goal-stats .progress-bar-wrapper {
+    background-color: #c2c9cb; }
+​
+/* line 241, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
 .text-widget .widget-canvas .slide-pagination {
-    background-color:rgb(233, 233, 233); 
-    }
-  
-.widget {
-    background-color: whitesmoke;
-    }
+  background-color: white; }
+​
+/* line 247, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.rag-widget .widget-canvas table tr,
+.ragcolumn-widget .widget-canvas table tr {
+  border-color: #828282; }
+​
+/* line 252, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.geckometer-widget .widget-canvas .scale {
+  background-position: 0 -431px; }
+/* line 255, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.geckometer-widget .widget-canvas .scale-big {
+  background-position: 0 -208px; }
+​
+/* line 262, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.widget .widget-inner .barchart .separator {
+  stroke: #dfdfdf; }
+/* line 266, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.widget .widget-inner .barchart .value-axis {
+  fill: #828282; }
+  /* line 269, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .widget .widget-inner .barchart .value-axis line {
+    stroke: #dfdfdf; }
+/* line 274, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.widget .widget-inner .barchart .threshold {
+  fill: rgba(0, 0, 0, 0.04); }
+/* line 278, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.widget .widget-inner .barchart .label, .widget .widget-inner .barchart .value {
+  color: #828282; }
+​
+/*
+  ## Map styles
+  Default styles for the map points and colouring of the countries
+*/
+/* line 296, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.map-widget .widget-canvas .subunit {
+  fill: #e0e0e0;
+  stroke: #d5d5d5; }
+/* line 301, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.map-widget .widget-canvas .single-point {
+  fill: #b940ff; }
+​
+/* line 307, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.clock-widget .time {
+  background: white; }
+​
+/* line 313, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.widget-size-full-width .widget-body {
+  background: white; }
+/* line 317, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.widget-size-full-width .widget-actions {
+  background: whitesmoke;
+  padding: 8px; }
+​
+/* line 323, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.dashboard-sized-el.dragging {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0.05)), color-stop(96.5%, rgba(0, 0, 0, 0.05)), color-stop(96.5%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 96.5%, rgba(0, 0, 0, 0.1) 96.5%, rgba(0, 0, 0, 0.1));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 96.5%, rgba(0, 0, 0, 0.1) 96.5%, rgba(0, 0, 0, 0.1));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 96.5%, rgba(0, 0, 0, 0.1) 96.5%, rgba(0, 0, 0, 0.1));
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 96.5%, rgba(0, 0, 0, 0.1) 96.5%, rgba(0, 0, 0, 0.1)); }
+​
+/* line 336, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.empty-dashboard {
+  color: #585858;
+  border-color: #d5d5d5; }
+​
+/* line 342, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .leaderboard {
+  background-color: #fff; }
+  /* line 345, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .future-composition .leaderboard .leaderboard-label, .future-composition .leaderboard .leaderboard-value {
+    border-color: #eee;
+    background-color: #fff; }
+/* line 351, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.future-composition .number-widget.v2 {
+  color: #666666; }
+  /* line 354, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .future-composition .number-widget.v2 .goal::before {
+    background-color: #c2c9cb; }
+  /* line 358, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .future-composition .number-widget.v2 .goal-threshold {
+    color: #fff; }
+​
+/* line 367, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+.widget.selected .widget-inner > header {
+  background-color: #8b9092; }
+  /* line 369, /home/deploy/production/app/app/assets/stylesheets/light-theme.css.scss */
+  .widget.selected .widget-in
